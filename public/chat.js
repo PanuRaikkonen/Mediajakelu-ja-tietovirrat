@@ -6,7 +6,7 @@ const socket = io('http://localhost:3000');
 
 document.querySelector('#msg-input').addEventListener('submit', (event) => {
   event.preventDefault();
-  const inp = document.getElementById('message');
+  const inp = document.getElementById('m');
   console.log('Sending: ', inp.value);
   socket.emit('chat message', inp.value);
   inp.value = '';

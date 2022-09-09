@@ -11,18 +11,16 @@ const users = [];
 
 io.on('connection', (socket) => {
   console.log('a user connected', socket.id);
-
+  
   socket.on('join', (username) => {
-    users.push({ username: username, id: socket.id });
-    console.log("users connected", users);
-    socket.emit('response', 'Joined with username' + username);
+    users.push({username: username, id: socket.id});
+    console.log('users connected:', users);
+    socket.emit('response', 'Joined with username ' + username);
   });
 
-  // Disconnect user
   socket.on('disconnect', () => {
     console.log('a user disconnected', socket.id);
-    users.pop({username: username, id: socket.id});
-    //TODO: remove user with socked.id from users array
+    // TODO: remove user with socket.id form users array
   });
 
   socket.on('chat message', (msg) => {
