@@ -18,6 +18,7 @@ io.on('connection', (socket) => {
     socket.emit('response', 'Joined with username' + username);
   });
 
+  // Disconnect user
   socket.on('disconnect', () => {
     console.log('a user disconnected', socket.id);
     users.pop({username: username, id: socket.id});
