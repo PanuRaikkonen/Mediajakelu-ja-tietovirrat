@@ -11,9 +11,9 @@ const users = [];
 
 io.on('connection', (socket) => {
   console.log('a user connected', socket.id);
-  
+
   socket.on('join', (username) => {
-    users.push({username: username, id: socket.id});
+    users.push({ username: username, id: socket.id });
     console.log('users connected:', users);
     socket.emit('response', 'Joined with username ' + username);
   });
@@ -23,9 +23,20 @@ io.on('connection', (socket) => {
     // TODO: remove user with socket.id form users array
   });
 
-  socket.on('chat message', (msg) => {
-    console.log('message: ', msg);
-    io.emit('chat message', msg);
+  socket.on('chat message', (nick, msg, room) => {
+    if (room === '') {
+      console.log('message: ', msg);
+      io.emit('chat message', nick, msg);
+    } else {
+      console.log('room message: ', msg);
+      io.to(room).emit('chat message', nick, msg);
+    }
+  });
+
+  socket.on('join-room', (room) => {
+    socket.join(room);
+    console.log('joined room ', room);
+    console.log(socket.rooms);
   });
 });
 

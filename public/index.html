@@ -10,14 +10,18 @@
   </head>
   <body>
     <form id="join">
-      <input type="text" id="username"/>
+      <input type="text" id="username" />
       <button type="submit">Join</button>
     </form>
-  <body>
+
     <form id="msg-input">
-      <input type="text" id="m"/>
+      <input type="text" id="nickname" placeholder="sender name" value="" />
+      <input type="text" id="m" placeholder="message" />
       <button type="submit">Send</button>
+      <input id="room-input" type="text" placeholder="room name" />
+      <button id="room-button" type="button">Join Room</button>
     </form>
+
     <ul id="messages"></ul>
   </body>
 </html>
