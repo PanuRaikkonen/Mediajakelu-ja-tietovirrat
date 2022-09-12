@@ -9,21 +9,38 @@
     <script defer src="chat.js"></script>
     <title>ChatTest</title>
   </head>
-  <body>
-    <section class="h-12 bg-slate-200">
-      <p class="text-center">TITLE + NAVIGAATIO</p>
+  <body class="h-screen">
+    <section class="h-24 bg-slate-200 border-8 border-clr-dark-purple">
+      <p class="text-center py-6">TITLE + NAVIGAATIO</p>
     </section>
-    <main class="h-[600px] py-12 px-5 border-clr-rubine-red border-2">
-      <h1 class="text-4xl font-bold underline text-center">Tere tulemast</h1>
-      <h2 class="text-center">heading 2 taso</h2>
+    <main
+      class="flex flex-col flex-1 md:flex-row h-full border-clr-rubine-red border-8"
+    >
+      <div class="bg-mainImage bg-cover w-full">
+        <h1 class="text-4xl text-white font-bold underline text-center">
+          Tere tulemast
+        </h1>
+        <h2 class="text-center text-white">Slogani</h2>
+      </div>
 
-      <!-- <img src="/colorIMG.png" alt="" class="mx-auto" /> -->
+      <div class="border-4 border-clr--royal-purple flex flex-col w-full p-2">
+        <h3 class="border-4 border-clr-dark-purple text-center">
+          Striimin nimi
+        </h3>
+        <p class="mx-auto p-2">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+          molestie vulputate mi rhoncus rhoncus. Quisque ligula lacus, porttitor
+          iaculis ornare sit amet, facilisis nec nulla. Donec laoreet augue vel
+          massa molestie hendrerit et quis quam. Sed hendrerit scelerisque
+          pellentesque. Phasellus rhoncus neque lectus, ac efficitur sem
+          molestie at. Integer sagittis lobortis ipsum id molestie. Sed mattis
+          tellus urna, ut egestas enim auctor et. Integer sagittis malesuada
+          tempus. Aenean eget tincidunt metus. Ut non ante magna.
+        </p>
+        <img src="/colorIMG.png" alt="" class="w-60 self-center" />
 
-      <h3 class="border-2 border-clr-dark-purple text-center">
-        heading taso 3
-      </h3>
-
-      <div class="btn-blue mt-3 mx-auto">Nappula</div>
+        <div class="btn-blue mt-3 mx-auto self-end">Nappi vie striimiin</div>
+      </div>
 
       <!-- <form id="join">
         <input type="text" id="username" />
@@ -40,7 +57,6 @@
 
       <ul id="messages"></ul> -->
     </main>
-    <section class="border-clr--royal-purple border-2">Info</section>
-    <footer class="border-clr--royal-purple border-2">footer</footer>
+    <footer class="border-clr--royal-purple border-2 self-end">footer</footer>
   </body>
 </html>
