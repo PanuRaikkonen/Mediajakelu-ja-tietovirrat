@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/output.css" rel="stylesheet" />
+    <script src="/socket.io/socket.io.js"></script>
+    <script defer src="chat.js"></script>
+    <title>ChatTest</title>
+  </head>
+  <body>
+    <div class="h-[600px] border-4 border-black rounded-lg mx-auto my-2 w-4/5">
+      <ul id="messages"></ul>
+    </div>
+    <form id="join" class="flex justify-center m-2">
+      <input
+        type="text"
+        id="username"
+        class="rounded-lg border-2 border-clr-old-mauve pl-4"
+      />
+      <button
+        type="submit"
+        class="px-8 rounded-md bg-clr-rubine-red uppercase ml-1 font-bold"
+      >
+        Join
+      </button>
+    </form>
+
+    <form id="msg-input" class="flex justify-center m-2">
+      <input
+        type="text"
+        id="nickname"
+        placeholder="sender name"
+        value=""
+        class="rounded-lg border-2 border-clr-old-mauve pl-4"
+      />
+      <input
+        type="text"
+        id="m"
+        placeholder="message"
+        class="ml-1 rounded-lg border-2 border-clr-old-mauve pl-4"
+      />
+      <button
+        type="submit"
+        class="px-8 rounded-md bg-clr-rubine-red uppercase ml-1 font-bold"
+      >
+        Send
+      </button>
+      <input
+        id="room-input"
+        type="text"
+        placeholder="room name"
+        class="ml-1 rounded-lg border-2 border-clr-old-mauve pl-4"
+      />
+      <button
+        id="room-button"
+        type="button"
+        class="px-8 rounded-md bg-clr-rubine-red uppercase ml-1 font-bold"
+      >
+        Join Room
+      </button>
+    </form>
+  </body>
+</html>

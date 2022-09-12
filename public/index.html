@@ -4,17 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../dist/output.css" rel="stylesheet" />
+    <link href="css/output.css" rel="stylesheet" />
     <script src="/socket.io/socket.io.js"></script>
     <script defer src="chat.js"></script>
     <title>ChatTest</title>
   </head>
   <body class="h-screen">
-    <section class="h-24 bg-slate-200 border-8 border-clr-dark-purple">
+    <section class="h-10% bg-slate-200 border-8 border-clr-dark-purple">
       <p class="text-center py-6">TITLE + NAVIGAATIO</p>
     </section>
     <main
-      class="flex flex-col flex-1 md:flex-row h-full border-clr-rubine-red border-8"
+      class="flex flex-col flex-1 md:flex-row h-80% border-clr-rubine-red border-8"
     >
       <div class="bg-mainImage bg-cover w-full">
         <h1 class="text-4xl text-white font-bold underline text-center">
@@ -23,7 +23,9 @@
         <h2 class="text-center text-white">Slogani</h2>
       </div>
 
-      <div class="border-4 border-clr--royal-purple flex flex-col w-full p-2">
+      <div
+        class="border-4 border-clr-royal-purple flex flex-col w-full p-2 max-h-fit"
+      >
         <h3 class="border-4 border-clr-dark-purple text-center">
           Striimin nimi
         </h3>
@@ -37,7 +39,7 @@
           tellus urna, ut egestas enim auctor et. Integer sagittis malesuada
           tempus. Aenean eget tincidunt metus. Ut non ante magna.
         </p>
-        <img src="/colorIMG.png" alt="" class="w-60 self-center" />
+        <img src="img/colorIMG.png" alt="" class="w-60 self-center" />
 
         <div class="btn-blue mt-3 mx-auto self-end">Nappi vie striimiin</div>
       </div>
@@ -57,6 +59,10 @@
 
       <ul id="messages"></ul> -->
     </main>
-    <footer class="border-clr--royal-purple border-2 self-end">footer</footer>
+    <footer
+      class="border-clr-royal-purple border-2 self-end h-10% text-center py-6"
+    >
+      footer
+    </footer>
   </body>
 </html>

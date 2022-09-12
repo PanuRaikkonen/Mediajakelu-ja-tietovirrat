@@ -1,11 +1,9 @@
-/* Omaa CSS koodia 
+/* Omaa CSS koodia
 
 [START TAILWIND]
-npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch 
+npx tailwindcss -i ./src/input.css -o ./public/css/output.css --watch 
 
-.card {
-    color: red;
-} */
+*/
 
 @tailwind base;
 @tailwind components;
@@ -18,7 +16,7 @@ npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
 }
 
 @layer components {
-  .btn-blue {
-    @apply bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-fit;
+  .message {
+    @apply py-2 px-3 bg-clr-rubine-red rounded-lg text-white w-fit m-5;
   }
 }

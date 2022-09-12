@@ -27,6 +27,7 @@ document.querySelector('#join').addEventListener('submit', (event) => {
 //Print message
 socket.on('chat message', (nick, msg) => {
   const item = document.createElement('li');
+  item.classList.add('message');
   item.innerHTML = nick + ': ' + msg;
   document.getElementById('messages').appendChild(item);
 });
