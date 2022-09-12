@@ -4,24 +4,43 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../dist/output.css" rel="stylesheet" />
     <script src="/socket.io/socket.io.js"></script>
     <script defer src="chat.js"></script>
     <title>ChatTest</title>
   </head>
   <body>
-    <form id="join">
-      <input type="text" id="username" />
-      <button type="submit">Join</button>
-    </form>
+    <section class="h-12 bg-slate-200">
+      <p class="text-center">TITLE + NAVIGAATIO</p>
+    </section>
+    <main class="h-[600px] py-12 px-5 border-clr-rubine-red border-2">
+      <h1 class="text-4xl font-bold underline text-center">Tere tulemast</h1>
+      <h2 class="text-center">heading 2 taso</h2>
 
-    <form id="msg-input">
-      <input type="text" id="nickname" placeholder="sender name" value="" />
-      <input type="text" id="m" placeholder="message" />
-      <button type="submit">Send</button>
-      <input id="room-input" type="text" placeholder="room name" />
-      <button id="room-button" type="button">Join Room</button>
-    </form>
+      <!-- <img src="/colorIMG.png" alt="" class="mx-auto" /> -->
 
-    <ul id="messages"></ul>
+      <h3 class="border-2 border-clr-dark-purple text-center">
+        heading taso 3
+      </h3>
+
+      <div class="btn-blue mt-3 mx-auto">Nappula</div>
+
+      <!-- <form id="join">
+        <input type="text" id="username" />
+        <button type="submit">Join</button>
+      </form>
+
+      <form id="msg-input">
+        <input type="text" id="nickname" placeholder="sender name" value="" />
+        <input type="text" id="m" placeholder="message" />
+        <button type="submit">Send</button>
+        <input id="room-input" type="text" placeholder="room name" />
+        <button id="room-button" type="button">Join Room</button>
+      </form>
+
+      <ul id="messages"></ul> -->
+    </main>
+    <section class="border-clr--royal-purple border-2">Info</section>
+    <footer class="border-clr--royal-purple border-2">footer</footer>
   </body>
 </html>
