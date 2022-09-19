@@ -9,50 +9,53 @@
     <script defer src="chat.js"></script>
     <title>ChatTest</title>
   </head>
-  <body class="h-screen">
-    <section class="h-10% bg-slate-200 border-8 border-clr-dark-purple">
-      <p class="text-center py-6">TITLE + NAVIGAATIO</p>
-    </section>
-    <main
-      class="flex flex-col flex-1 md:flex-row h-80% border-clr-rubine-red border-8"
-    >
-      <div class="bg-mainImage bg-cover w-full">
-        <h1 class="text-4xl text-white font-bold underline text-center">
-          Tere tulemast
-        </h1>
-        <h2 class="text-center text-white">Slogani</h2>
-      </div>
-
-      <div
-        class="border-4 border-clr-royal-purple flex flex-col w-full p-2 max-h-fit"
+  <body>
+    <div class="flex flex-col flex-1 min-h-screen">
+      <section class="h-14 bg-slate-200 border-8 border-clr-dark-purple">
+        <p class="text-center">TITLE + NAVIGAATIO</p>
+      </section>
+      <main
+        class="flex flex-col flex-1 md:flex-row border-clr-rubine-red border-8"
       >
-        <h3 class="border-4 border-clr-dark-purple text-center">
-          Striimin nimi
-        </h3>
-        <p class="mx-auto p-2">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-          molestie vulputate mi rhoncus rhoncus. Quisque ligula lacus, porttitor
-          iaculis ornare sit amet, facilisis nec nulla. Donec laoreet augue vel
-          massa molestie hendrerit et quis quam. Sed hendrerit scelerisque
-          pellentesque. Phasellus rhoncus neque lectus, ac efficitur sem
-          molestie at. Integer sagittis lobortis ipsum id molestie. Sed mattis
-          tellus urna, ut egestas enim auctor et. Integer sagittis malesuada
-          tempus. Aenean eget tincidunt metus. Ut non ante magna.
-        </p>
-        <img src="img/colorIMG.png" alt="" class="w-60 self-center" />
+        <div class="bg-mainImage bg-cover w-full flex-grow">
+          <h1 class="text-4xl text-white font-bold underline text-center">
+            Tere tulemast
+          </h1>
+          <h2 class="text-center text-white">Slogani</h2>
+        </div>
 
         <div
-          class="px-8 rounded-md bg-clr-rubine-red uppercase ml-1 font-bold self-center"
+          class="border-4 border-clr-royal-purple flex flex-col w-full p-2 self-center md:flex-grow"
         >
-          Nappi vie striimiin
+          <h3 class="border-4 border-clr-dark-purple text-center">
+            Striimin nimi
+          </h3>
+          <p class="mx-auto p-2">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+            molestie vulputate mi rhoncus rhoncus. Quisque ligula lacus,
+            porttitor iaculis ornare sit amet, facilisis nec nulla. Donec
+            laoreet augue vel massa molestie hendrerit et quis quam. Sed
+            hendrerit scelerisque pellentesque. Phasellus rhoncus neque lectus,
+            ac efficitur sem molestie at. Integer sagittis lobortis ipsum id
+            molestie. Sed mattis tellus urna, ut egestas enim auctor et. Integer
+            sagittis malesuada tempus. Aenean eget tincidunt metus. Ut non ante
+            magna.
+          </p>
+          <!-- <img src="img/colorIMG.png" alt="" class="w-60 self-center" /> -->
+
+          <div
+            class="px-8 rounded-md bg-clr-rubine-red uppercase ml-1 font-bold self-center"
+          >
+            Nappi vie striimiin
+          </div>
         </div>
-      </div>
+      </main>
 
       <!-- <form id="join">
         <input type="text" id="username" />
         <button type="submit">Join</button>
       </form>
-
+      
       <form id="msg-input">
         <input type="text" id="nickname" placeholder="sender name" value="" />
         <input type="text" id="m" placeholder="message" />
@@ -60,13 +63,11 @@
         <input id="room-input" type="text" placeholder="room name" />
         <button id="room-button" type="button">Join Room</button>
       </form>
-
+      
       <ul id="messages"></ul> -->
-    </main>
-    <footer
-      class="border-clr-royal-purple border-2 self-end h-10% text-center py-6"
-    >
-      footer
-    </footer>
+      <footer class="border-clr-royal-purple border-2 h-10 text-center">
+        footer
+      </footer>
+    </div>
   </body>
 </html>

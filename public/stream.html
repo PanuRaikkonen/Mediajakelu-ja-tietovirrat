@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/output.css" rel="stylesheet" />
+    <!-- <script src="/socket.io/socket.io.js"></script> -->
+    <!-- <script defer src="chat.js"></script> -->
+    <title>StreamTest</title>
+    <link href="https://vjs.zencdn.net/7.20.2/video-js.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/@videojs/themes@1/dist/forest/index.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="flex flex-col flex-1 min-h-screen">
+      <section class="h-14 bg-slate-200 border-8 border-clr-dark-purple">
+        <p class="text-center">TITLE + NAVIGAATIO</p>
+      </section>
+      <main
+        class="flex flex-row flex-1 border-clr-rubine-red border-8 bg-mainImage bg-cover"
+      >
+        <div class="flex flex-col flex-1">
+          <div class="border-4 border-blue-500 flex flex-1 m-5 h-3/5">
+            <video
+              id="my-video"
+              class="video-js vjs-theme-forest absolute overflow-hidden w-auto min-h-full min-w-full max-w-none"
+            >
+              <!-- <source
+                  src="http://195.148.104.124:1935/jakelu/tailwind/playlist.m3u8"
+                  type="application/x-mpegURL"
+                /> -->
+              <source src="stream.mp4" type="video/mp4" />
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider
+                upgrading to a web browser that
+                <a
+                  href="https://videojs.com/html5-video-support/"
+                  target="_blank"
+                  >supports HTML5 video</a
+                >
+              </p>
+            </video>
+          </div>
+          <div class="border-4 border-white h-2/5">
+            <div
+              class="h-5/6 border-4 border-black rounded-lg mx-auto my-2 w-4/5"
+            >
+              <ul id="messages"></ul>
+            </div>
+            <input
+              type="text"
+              id="m"
+              placeholder="message"
+              class="ml-1 rounded-lg border-2 border-clr-old-mauve pl-4"
+            />
+            <button
+              type="submit"
+              class="px-8 rounded-md bg-clr-rubine-red uppercase ml-1 font-bold"
+            >
+              Send
+            </button>
+          </div>
+        </div>
+      </main>
+
+      <!-- <form id="join">
+        <input type="text" id="username" />
+        <button type="submit">Join</button>
+      </form>
+      
+      <form id="msg-input">
+        <input type="text" id="nickname" placeholder="sender name" value="" />
+        <input type="text" id="m" placeholder="message" />
+        <button type="submit">Send</button>
+        <input id="room-input" type="text" placeholder="room name" />
+        <button id="room-button" type="button">Join Room</button>
+      </form>
+      
+      <ul id="messages"></ul> -->
+      <footer class="border-clr-royal-purple border-2 h-10 text-center">
+        footer
+      </footer>
+    </div>
+    <script src="https://vjs.zencdn.net/7.20.2/video.min.js"></script>
+    <script>
+      let myPlayer = document.querySelector('.video-js');
+
+      console.log(myPlayer);
+
+      videojs(myPlayer, {
+        controls: true,
+        autoplay: false,
+        preload: 'auto',
+        poster: './css/img/mainIMG.png',
+        aspectRatio: '16:9',
+      });
+    </script>
+  </body>
+</html>
