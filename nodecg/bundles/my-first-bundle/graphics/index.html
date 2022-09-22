@@ -1,176 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <style>
-      @import url('https://fonts.googleapis.com/css?family=Lato:300,400|Poppins:300,400,800&display=swap');
-      * {
-        margin: 0;
-        padding: 0;
-      }
+	<head>
+		<meta charset="UTF-8" />
+		<style>
+			@import url("https://fonts.googleapis.com/css?family=Lato:300,400|Poppins:300,400,800&display=swap");
+			* {
+				margin: 0;
+				padding: 0;
+			}
 
-      body,
-      html {
-        overflow: hidden;
-        font-family: 'Calibri, sans-serif';
-        -webkit-text-stroke: 0.25px black;
-      }
+			body,
+			html {
+				overflow: hidden;
+				font-family: "Calibri, sans-serif";
+				-webkit-text-stroke: 0.25px black;
+			}
 
-      .container {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: start;
-        align-items: end;
-      }
+			.container {
+				width: 100%;
+				height: 100vh;
+				display: flex;
+				justify-content: start;
+				align-items: end;
+			}
 
-      .box {
-        width: fit-content;
-        height: auto;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        background: #251e3d;
-        padding: 30px 40px;
-      }
-      .takaosa {
-        width: 100%;
-        position: relative;
-        display: flex;
-        align-items: center;
-        height: 50px;
-        display: none;
-        user-select: none;
-      }
+			.box {
+				width: fit-content;
+				height: auto;
+				position: relative;
+				display: flex;
+				/* align-items: center; */
+				/* justify-content: center; */
+				flex-direction: column;
+				background: #251e3d;
+				padding: 30px 40px;
+			}
+			.takaosa {
+				width: 100%;
+				position: absolute;
+				display: flex;
+				/* align-items: center; */
+				height: 50px;
+				display: none;
+				user-select: none;
+			}
+			.takaosa p {
+				color: #cb335f;
+				font-size: 32px;
+				display: flex;
+				align-items: baseline;
+				user-select: none;
+				font-weight: bold;
+				/* transform: rotateY(180deg); */
+			}
 
-      .box:hover h1,
-      .box:hover p {
-        display: none;
-      }
-      .box:hover .takaosa {
-        display: flex;
-      }
+			.box:hover .role {
+				visibility: hidden;
+				/* transform: rotateY(180deg); */
+			}
+			.box:hover .title {
+				visibility: hidden;
+				/* transform: rotateY(180deg); */
+			}
+			.box:hover .takaosa {
+				display: flex;
+				/* transform: rotateY(180deg); */
+			}
 
-      .title {
-        width: 100%;
-        position: relative;
-        display: flex;
-        align-items: center;
-        height: 50px;
-      }
-      .title-block-animation {
-        animation-name: Teksti-1;
-        animation-delay: 0.5s;
-        animation-duration: 0.8s;
-        animation-fill-mode: forwards;
-        animation-timing-function: ease-in;
-      }
-      .title .block {
-        width: 100%;
-        height: inherit;
-        background: #251e3d;
-        position: absolute;
-        display: flex;
-      }
-      .title h1 {
-        color: #cb335f;
-        font-size: 32px;
-        display: flex;
-        align-items: baseline;
-        /* position: relative; */
-        user-select: none;
-      }
+			.title {
+				width: 100%;
+				position: relative;
+				display: flex;
+				align-items: center;
+				height: 50px;
+			}
+			.title-block-animation {
+				animation-name: Teksti-1;
+				animation-delay: 0.5s;
+				animation-duration: 0.8s;
+				animation-fill-mode: forwards;
+				animation-timing-function: ease-in;
+			}
+			.title .block {
+				width: 100%;
+				height: inherit;
+				background: #251e3d;
+				position: absolute;
+				display: flex;
+			}
+			.title h1 {
+				color: #cb335f;
+				font-size: 32px;
+				display: flex;
+				align-items: baseline;
+				/* position: relative; */
+				user-select: none;
+			}
 
-      .role {
-        width: 100%;
-        position: relative;
-        display: flex;
-        align-items: center;
-        height: 30px;
-        margin-top: -10px;
-      }
-      .role .block {
-        width: 100%;
-        height: inherit;
-        background: #251e3d;
-        position: absolute;
-        display: flex;
-      }
-      .role p {
-        font-weight: 400;
-        border: 2px black;
-        color: #cb335f;
-        font-size: 12px;
-        text-transform: uppercase;
-        letter-spacing: 5px;
-        user-select: none;
-      }
+			.role {
+				width: 100%;
+				position: relative;
+				display: flex;
+				align-items: center;
+				height: 30px;
+				margin-top: -10px;
+			}
+			.role .block {
+				width: 100%;
+				height: inherit;
+				background: #251e3d;
+				position: absolute;
+				display: flex;
+			}
+			.role p {
+				font-weight: 400;
+				border: 2px black;
+				color: #cb335f;
+				font-size: 12px;
+				text-transform: uppercase;
+				letter-spacing: 5px;
+				user-select: none;
+			}
 
-      @keyframes Teksti-1 {
-        0% {
-          width: 100%;
-        }
-        100% {
-          width: 0;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container" id="lowerThird">
-      <div class="box">
-        <div class="title">
-          <span class="block title-block-animation" id="blokki"></span>
-          <h1 id="puhuja">Panu Räikkönen</h1>
-        </div>
+			@keyframes Teksti-1 {
+				0% {
+					width: 100%;
+				}
+				100% {
+					width: 0;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container" id="lowerThird">
+			<div class="box">
+				<div class="title">
+					<span
+						class="block title-block-animation"
+						id="blokki"
+					></span>
+					<h1 id="puhuja">Panu Räikkönen</h1>
+				</div>
+				<div class="takaosa">
+					<p>Tämä on Hover Effectin tulos</p>
+				</div>
 
-        <div class="takaosa"><p>Tämä on Hover Effectin tulos</p></div>
+				<div class="role">
+					<div
+						class="block title-block-animation"
+						id="tokablokki"
+					></div>
+					<p id="rooli">Köyhä Opiskelija</p>
+				</div>
+			</div>
+		</div>
 
-        <div class="role">
-          <div class="block title-block-animation" id="tokablokki"></div>
-          <p id="rooli">Köyhä Opiskelija</p>
-        </div>
-      </div>
-    </div>
+		<script>
+			const speakerRep = nodecg.Replicant("speakerReplicant");
+			const puhuja = document.getElementById("puhuja");
+			const titleRep = nodecg.Replicant("titleReplicant");
+			const rooli = document.getElementById("rooli");
+			const blokki = document.getElementById("blokki");
+			const tokablokki = document.getElementById("tokablokki");
 
-    <script>
-      const speakerRep = nodecg.Replicant('speakerReplicant');
-      const puhuja = document.getElementById('puhuja');
-      const titleRep = nodecg.Replicant('titleReplicant');
-      const rooli = document.getElementById('rooli');
-      const blokki = document.getElementById('blokki');
-      const tokablokki = document.getElementById('tokablokki');
+			speakerRep.on("change", (newValue, oldValue) => {
+				console.log(`myRep changed from ${oldValue} to ${newValue}`);
+				puhuja.innerHTML = newValue;
+				nimiAnim();
+			});
 
-      speakerRep.on('change', (newValue, oldValue) => {
-        console.log(`myRep changed from ${oldValue} to ${newValue}`);
-        puhuja.innerHTML = newValue;
-        nimiAnim();
-      });
+			titleRep.on("change", (newValue, oldValue) => {
+				console.log(`myRep changed from ${oldValue} to ${newValue}`);
+				rooli.innerHTML = newValue;
+				titleAnim();
+			});
 
-      titleRep.on('change', (newValue, oldValue) => {
-        console.log(`myRep changed from ${oldValue} to ${newValue}`);
-        rooli.innerHTML = newValue;
-        titleAnim();
-      });
+			function nimiAnim() {
+				blokki.classList.remove("title-block-animation");
+				blokki.offsetWidth;
+				blokki.classList.add("title-block-animation");
+				// puhuja.classList.remove('title-h1-animation');
+				// puhuja.offsetWidth;
+				// puhuja.classList.add('title-h1-animation');
 
-      function nimiAnim() {
-        blokki.classList.remove('title-block-animation');
-        blokki.offsetWidth;
-        blokki.classList.add('title-block-animation');
-        // puhuja.classList.remove('title-h1-animation');
-        // puhuja.offsetWidth;
-        // puhuja.classList.add('title-h1-animation');
-
-        // rooli.classList.remove('role-p-animation');
-        // rooli.offsetWidth;
-        // rooli.classList.add('role-p-animation');
-      }
-      function titleAnim() {
-        tokablokki.classList.remove('title-block-animation');
-        tokablokki.offsetWidth;
-        tokablokki.classList.add('title-block-animation');
-      }
-    </script>
-  </body>
+				// rooli.classList.remove('role-p-animation');
+				// rooli.offsetWidth;
+				// rooli.classList.add('role-p-animation');
+			}
+			function titleAnim() {
+				tokablokki.classList.remove("title-block-animation");
+				tokablokki.offsetWidth;
+				tokablokki.classList.add("title-block-animation");
+			}
+		</script>
+	</body>
 </html>
