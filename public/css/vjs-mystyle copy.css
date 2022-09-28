@@ -1,0 +1,70 @@
+.vjs-mystyle {
+  --vjs-mystyle--primary: #cb335fff;
+  --vjs-mystyle--secondary: #2a2152ff;
+}
+.video-js {
+  font-size: 12px;
+  color: var(--vjs-mystyle--primary);
+}
+
+.vjs-mystyle .vjs-big-play-button {
+  font-size: 3em;
+
+  line-height: 1.5rem;
+  height: 1.5rem;
+  width: 3em;
+
+  /* 0.06666em = 2px default */
+  border: 0.06666em solid #cb335fff;
+  /* 0.3em = 9px default */
+  border-radius: 0.3em;
+}
+
+.vjs-mystyle .vjs-big-play-button {
+  width: 88px;
+  height: 88px;
+  background: none;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='88' fill='%23fff'%3E%3Cpath fill-rule='evenodd' d='M44 88C19.738 88 0 68.262 0 44S19.738 0 44 0s44 19.738 44 44-19.738 44-44 44zm0-85C21.393 3 3 21.393 3 44c0 22.608 18.393 41 41 41s41-18.392 41-41C85 21.393 66.607 3 44 3zm16.063 43.898L39.629 60.741a3.496 3.496 0 01-3.604.194 3.492 3.492 0 01-1.859-3.092V30.158c0-1.299.712-2.483 1.859-3.092a3.487 3.487 0 013.604.194l20.433 13.843a3.497 3.497 0 01.001 5.795zm-1.683-3.311L37.946 29.744a.49.49 0 00-.276-.09.51.51 0 00-.239.062.483.483 0 00-.265.442v27.685c0 .262.166.389.265.442.1.053.299.118.515-.028L58.38 44.414A.489.489 0 0058.6 44a.49.49 0 00-.22-.413z'/%3E%3C/svg%3E");
+  border: none;
+  top: 50%;
+  left: 50%;
+  margin-top: -44px;
+  margin-left: -44px;
+  color: purple;
+}
+.video-js .vjs-control-bar,
+.video-js .vjs-big-play-button,
+.video-js .vjs-menu-button .vjs-menu-content {
+  /* IE8 - has no alpha support */
+  background-color: var(--vjs-mystyle--secondary);
+  /* Opacity: 1.0 = 100%, 0.0 = 0% */
+  background-color: rgba(--vjs-mystyle--secondary, 0.6);
+}
+
+/* Slider - used for Volume bar and Progress bar */
+.video-js .vjs-slider {
+  --slider-bg-color: lighten(#cb335fff, 15%);
+  background-color: var(--slider-bg-color);
+  background-color: rgba(--slider-bg-color, 0.5);
+}
+/* .vjs-icon-placeholder{
+  false
+} */
+.video-js .vjs-volume-level,
+.video-js .vjs-play-progress {
+  background: var(--vjs-mystyle--secondary);
+}
+
+.video-js .vjs-load-progress {
+  --slider-bg-color: lighten(--vjs-mystyle--primary, 15%);
+  background: lighten(--slider-bg-color, 25%);
+  background: rgba(--slider-bg-color, 0.5);
+}
+
+.video-js .vjs-load-progress div {
+  --slider-bg-color: lighten(--vjs-mystyle--primary, 15%);
+  background: lighten(--slider-bg-color, 50%);
+  background: rgba(--slider-bg-color, 0.75);
+}
