@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="css/output.css" rel="stylesheet" />
-    <!-- <script src="/socket.io/socket.io.js"></script> -->
-    <!-- <script defer src="chat.js"></script> -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script defer src="chat.js"></script>
     <title>StreamTest</title>
     <link href="https://vjs.zencdn.net/7.20.2/video-js.css" rel="stylesheet" />
     <!-- Forest -->
@@ -16,15 +16,15 @@
     />
     <link href="css/vjs-mystyle.css" type="text/css" rel="stylesheet" />
   </head>
-  <body>
-    <div class="flex flex-col flex-1 min-h-screen max-h-screen">
-      <section class="h-14 bg-slate-200 border-8 border-clr-dark-purple">
-        <p class="text-center">TITLE + NAVIGAATIO</p>
+  <body class="scrollbar-hide">
+    <div class="flex flex-col flex-1 min-h-screen h-100% max-h-screen">
+      <section class="h-12 bg-slate-50">
+        <p class="text-center">MAHDOLLISUUKSIEN MAISEMIA</p>
       </section>
       <main class="flex flex-row flex-1 bg-mainImage bg-cover">
-        <div class="flex flex-1 flex-col md:flex-row">
+        <div class="flex flex-1 flex-col lg:flex-row">
           <div
-            class="border-4 border-clr-rubine-red flex flex-1 md:my-5 md:ml-5 mx-1 my-1 max-w-full"
+            class="border-4 border-clr-rubine-red flex flex-1 lg:my-3 lg:ml-5 mx-1 my-1 max-w-full"
           >
             <video
               id="my-video"
@@ -46,46 +46,68 @@
               </p>
             </video>
           </div>
-          <div class="h-2/5 md:h-full md:mx-3 md:mt-5">
-            <div class="md:h-5/6 h-3/4 border-4 border-white mx-1">
+          <div class="h-2/5 lg:h-full lg:mx-3 lg:mt-5">
+            <div
+              class="lg:h-5/6 h-3/4 border-4 border-white mx-1 flex-wrap min-w-full max-w-fit scrollbar-hide overflow-scroll"
+            >
               <ul id="messages"></ul>
             </div>
-            <div class="mt-2 pt-2 flex flex-row">
+            <form class="pt-2 flex flex-row" id="msg-input">
               <textarea
                 type="text"
                 id="m"
                 placeholder="message"
-                class="w-5/6 border-2 border-clr-old-mauve pl-4 ml-1 md:h-24 flex-grow resize-none"
+                class="w-5/6 border-2 border-clr-old-mauve pl-4 ml-1 lg:h-24 flex-grow resize-none"
               ></textarea>
+              <input
+                type="text"
+                id="nickname"
+                placeholder="sender name"
+                value=""
+                class="rounded-lg border-2 border-clr-old-mauve pl-4 hidden"
+              />
               <button
                 type="submit"
-                class="px-6 bg-clr-rubine-red uppercase ml-1 font-bold h-14 mr-1 md:h-24"
+                class="px-6 bg-clr-rubine-red uppercase ml-1 font-bold h-14 mr-1 lg:h-24"
               >
                 Send
               </button>
-            </div>
+              <input
+                id="room-input"
+                type="text"
+                placeholder="room name"
+                class="ml-1 rounded-lg border-2 border-clr-old-mauve pl-4 hidden"
+              />
+              <button
+                id="room-button"
+                type="button"
+                class="px-8 rounded-md bg-clr-rubine-red uppercase ml-1 font-bold hidden"
+              ></button>
+            </form>
           </div>
         </div>
       </main>
 
-      <!-- <form id="join">
+      <form id="join" class="hidden">
         <input type="text" id="username" />
         <button type="submit">Join</button>
       </form>
-      
-      <form id="msg-input">
+      <!-- <form id="msg-input">
         <input type="text" id="nickname" placeholder="sender name" value="" />
         <input type="text" id="m" placeholder="message" />
         <button type="submit">Send</button>
-        <input id="room-input" type="text" placeholder="room name" />
+        <input id="room-input" value="2" type="text" placeholder="room name" />
         <button id="room-button" type="button">Join Room</button>
-      </form>
-      
-      <ul id="messages"></ul> -->
-      <footer class="border-clr-royal-purple border-2 h-10 text-center">
-        footer
-      </footer>
+      </form> -->
     </div>
+    <footer
+      class="border-clr-royal-purple border-2 h-10 text-center flex flex-row flex-wrap"
+    >
+      <div>Metropolia</div>
+      <div>Kulttuurihyvinvointi@metropolia.fi</div>
+      <div>#mahdollisuuksienmaisemia</div>
+      <div>Sosiaalimedia Linkit</div>
+    </footer>
     <script src="https://vjs.zencdn.net/7.20.2/video.min.js"></script>
     <script>
       let myPlayer = document.querySelector('.video-js');

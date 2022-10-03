@@ -17,6 +17,16 @@ npx tailwindcss -i ./src/input.css -o ./public/css/output.css --watch
 
 @layer components {
   .message {
-    @apply py-2 px-3 bg-clr-rubine-red rounded-lg text-white w-fit m-5;
+    @apply py-1 px-1 bg-clr-rubine-red rounded-lg text-white w-fit m-2;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .wtf {
+    height: calc(100vh - 3rem);
   }
 }
