@@ -2,7 +2,8 @@
 
 // Localhost for development only
 const socket = io('http://localhost:3000');
-// const socket = io('panuraivm.westeurope.cloudapp.azure.com');
+// const socket = io('https://panuraivm.westeurope.cloudapp.azure.com:443');
+// const socket = io('http://20.73.178.227:443');
 
 //Message values
 document.querySelector('#msg-input').addEventListener('submit', (event) => {
