@@ -5,43 +5,80 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="css/output.css" rel="stylesheet" />
-    <!-- <script src="/socket.io/socket.io.js"></script> -->
-    <!-- <script defer src="chat.js"></script> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>ChatTest</title>
   </head>
   <body>
-    <div class="flex flex-col flex-1 min-h-screen">
-      <section class="h-14 bg-slate-200 border-8 border-clr-dark-purple">
-        <p class="text-center">TITLE + NAVIGAATIO</p>
-      </section>
-      <main
-        class="flex flex-col flex-1 md:flex-row border-clr-rubine-red border-8"
+    <div class="flex flex-col min-h-screen">
+      <section
+        class="bg-clr-russian-violet text-clr-rubine-red font-bold text-2xl"
       >
-        <div class="bg-mainImage bg-cover w-full flex-grow">
-          <h1 class="text-4xl text-white font-bold underline text-center">
-            Tere tulemast
-          </h1>
-          <h2 class="text-center text-white">Slogani</h2>
+        <a class="h-16 flex items-center justify-center" href="./">
+          MAHDOLLISUUKSIEN MAISEMIA
+        </a>
+      </section>
+      <main class="flex flex-col flex-1 bg-mainImage bg-cover">
+        <div class="flex place-content-end flex-grow items-center">
+          <h2
+            class="text-center text-clr-rubine-red text-3xl flex-wrap text-outline"
+          >
+            Luovuus sinun työssäsi? Mitä luovuus työelämässä mahdollistaa?
+          </h2>
         </div>
 
-        <div
-          class="border-4 border-clr-royal-purple flex flex-col w-full p-2 self-center md:flex-grow"
-        >
-          <h3 class="border-4 border-clr-dark-purple text-center">
-            Striimin nimi
-          </h3>
-          <p class="mx-auto p-2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-            molestie vulputate mi rhoncus rhoncus. Quisque ligula lacus,
-            porttitor iaculis ornare sit amet, facilisis nec nulla. Donec
-            laoreet augue vel massa molestie hendrerit et quis quam. Sed
-            hendrerit scelerisque pellentesque. Phasellus rhoncus neque lectus,
-            ac efficitur sem molestie at. Integer sagittis lobortis ipsum id
-            molestie. Sed mattis tellus urna, ut egestas enim auctor et. Integer
-            sagittis malesuada tempus. Aenean eget tincidunt metus. Ut non ante
-            magna.
-          </p>
-          <!-- <img src="img/colorIMG.png" alt="" class="w-60 self-center" /> -->
+        <div class="text-white flex flex-col w-full self-center pb-10">
+          <div class="flex flex-col lg:flex-row">
+            <div class="m-2">
+              <h3 class="text-center font-bold text-2xl text-outline">
+                Mikä tapahtuma?
+              </h3>
+              <p class="p-2 text-outline text-lg">
+                Miten luovuuden mahdollisuuksia huomioiva näkökulma työelämässä
+                eri aloilla ja ammateissa otetaan käyttöön? Miten luovuuden
+                huomiointi edistää kestävää, hyvää työelämää ja tulevaisuutta?
+                <br />
+                <br />
+                Moniäänisessä tapahtumassa kuullaan sekä huippututkijoiden
+                puheenvuoroja että käydään eri alojen ammattilaisten ja
+                opiskelijoiden yhteistä keskustelua luovuuden mahdollisuuksista
+                työelämässä.
+              </p>
+            </div>
+            <div class="m-2">
+              <h3 class="text-center font-bold text-2xl text-outline">
+                Missä ja milloin?
+              </h3>
+              <p class="p-2 text-outline text-lg">
+                Metropolia Ammattikorkeakoulun Myllypuron kampuksella (Helsinki)
+                <br />
+                <br />
+                Keskiviikkona 5.10.2022 klo 8.00-15.00
+                <br />
+                <br />
+                Tapahtuma on maksuton, mutta edellyttää sitovaa
+                ennakkoilmoittautumista.
+              </p>
+            </div>
+            <div class="m-2">
+              <h3 class="text-center font-bold text-2xl text-outline">
+                Ohjelma ja kenelle?
+              </h3>
+              <p class="p-2 text-outline text-base">
+                Tutustu tapahtuman ohjelmaan.
+                <br />
+                <br />
+                Tapahtuma on tarkoitettu eri alojen ammateissa toimiville
+                ammattilaisille, asiantuntijoille, yrittäjille ja
+                opiskelijoille. Luovuus tuo mahdollisuuksia kaikilla aloilla!
+                <br />
+                <br />
+                Tapahtumaan on rajoitettu määrä paikkoja, ilmoittaudu ajoissa.
+              </p>
+            </div>
+          </div>
 
           <div
             class="rounded-md bg-clr-rubine-red uppercase ml-1 font-bold self-center"
@@ -52,24 +89,39 @@
           </div>
         </div>
       </main>
-
-      <!-- <form id="join">
-        <input type="text" id="username" />
-        <button type="submit">Join</button>
-      </form>
-      
-      <form id="msg-input">
-        <input type="text" id="nickname" placeholder="sender name" value="" />
-        <input type="text" id="m" placeholder="message" />
-        <button type="submit">Send</button>
-        <input id="room-input" type="text" placeholder="room name" />
-        <button id="room-button" type="button">Join Room</button>
-      </form>
-      
-      <ul id="messages"></ul> -->
-      <footer class="border-clr-royal-purple border-2 h-10 text-center">
-        footer
-      </footer>
     </div>
+    <div class="p-10 bg-clr-dark-purple">
+      <h2 class="text-center text-white m-auto bg-clr-rubine-red">
+        "Luova toiminta, itsensä ilmaiseminen, kulttuurinen toimijuus ja
+        taidekokemukset lisäävät osallisuutta ja hyvinvointia ja ovat siksi
+        tärkeä osa yksilön merkityksellistä elämää ja koko yhteiskuntaa. Viime
+        vuosina aiheesta on saatu paljon tutkimustietoa. Mitä voimme viedä
+        tutkimuksesta käytäntöön?"
+      </h2>
+    </div>
+    <footer
+      class="bg-clr-russian-violet h-36 flex flex-col p-5 justify-around items-center lg:px-3 text-white text-xl lg:flex-row"
+    >
+      <div>
+        <a href="https://www.metropolia.fi">
+          <img
+            src="https://mahdollisuuksienmaisemia.metropolia.fi/wp-content/uploads/2022/04/metropolia-logo-white-transparent-bg.png"
+          />
+        </a>
+      </div>
+      <div>Kulttuurihyvinvointi@metropolia.fi</div>
+      <div>#mahdollisuuksienmaisemia</div>
+      <div>
+        <a
+          class="fa fa-facebook"
+          href="https://www.facebook.com/mahdollisuuksienmaisemia"
+        ></a>
+        <a
+          class="fa fa-instagram"
+          href="https://www.instagram.com/mahdollisuuksienmaisemia/"
+        ></a>
+        <a class="fa fa-twitter" href="https://twitter.com/m_maisemia"></a>
+      </div>
+    </footer>
   </body>
 </html>
