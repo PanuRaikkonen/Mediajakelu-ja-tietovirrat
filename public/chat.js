@@ -3,44 +3,63 @@
 // Localhost for development only
 const socket = io('http://localhost:3000');
 // const socket = io('https://panuraivm.westeurope.cloudapp.azure.com:443');
-// const socket = io('http://20.73.178.227:443');
+
+const form = document.getElementById('chat-input');
+const join = document.getElementById('join');
+const inp = document.getElementById('m');
+const messages = document.getElementById('messages');
+const username = document.getElementById('username');
+
+let user;
+
+document.getElementById('chatBtn').disabled = true;
 
 //Message values
-document.querySelector('#msg-input').addEventListener('submit', (event) => {
+form.addEventListener('submit', (event) => {
   event.preventDefault();
-  const inp = document.getElementById('m');
-  const nickname = document.getElementById('nickname');
-  const room = document.getElementById('room-input');
-  console.log('Sending: ', nickname.value, inp.value);
-  socket.emit('chat message', nickname.value, inp.value, room.value);
-  inp.value = '';
-  nickname.value = nickname.value;
+  if (inp.value) {
+    const payload = `${user}` + ': ' + `${inp.value}`;
+    socket.emit('chat-message', payload);
+    inp.value = '';
+  }
 });
 
 //User join
-document.querySelector('#join').addEventListener('submit', (event) => {
+join.addEventListener('submit', (event) => {
   event.preventDefault();
-  const inp = document.getElementById('username');
-  socket.emit('join', inp.value);
-  inp.value = '';
+  if (username.value) {
+    user = username.value;
+    socket.emit('join', user);
+    nameIsnt();
+  }
 });
 
 //Print message
-socket.on('chat message', (nick, msg) => {
+socket.on('chat-message', (msg) => {
+  console.log(msg);
   const item = document.createElement('li');
   item.classList.add('message');
-  item.innerHTML = nick + ': ' + msg;
-  document.getElementById('messages').appendChild(item);
+  item.textContent = msg;
+  messages.appendChild(item);
+  messages.scrollTop = messages.scrollHeight;
 });
 
-socket.on('response', (msg) => {
-  console.log(msg);
+socket.on('All users', (msg) => {
+  console.log('users connected', msg);
 });
 
-const joinRoomButton = document.getElementById('room-button');
-const roomInput = document.getElementById('room-input');
-
-joinRoomButton.addEventListener('click', () => {
-  const room = roomInput.value;
-  socket.emit('join-room', room);
+socket.on('Name already taken', (msg) => {
+  console.log(msg, 'name taken');
+  nameIs();
 });
+
+function nameIsnt() {
+  document.getElementById('chatBtn').disabled = false;
+  document.getElementById('taken').innerHTML = '';
+  document.getElementById('usernameBox').classList.add('hidden');
+}
+function nameIs() {
+  document.getElementById('chatBtn').disabled = true;
+  document.getElementById('taken').innerHTML = 'Name already taken!';
+  document.getElementById('usernameBox').classList.add('block');
+}

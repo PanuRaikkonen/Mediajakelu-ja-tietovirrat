@@ -7,36 +7,43 @@ const io = require('socket.io')(http);
 
 app.use(express.static('public'));
 
-const users = [];
+let users = [];
+let takenNames = [];
 
 io.on('connection', (socket) => {
   console.log('a user connected', socket.id);
 
   socket.on('join', (username) => {
-    users.push({ username: username, id: socket.id });
-    console.log('users connected:', users);
-    socket.emit('response', 'Joined with username ' + username);
+    if (users.some((item) => item.username === `${username}`)) {
+      io.emit('Name already taken', username);
+    } else {
+      users.push({ username: username, id: socket.id });
+      takenNames.push(username);
+      console.log('users connected:', users);
+      io.emit('chat-message', username + ' joined.');
+      io.emit('new user', username);
+      io.emit('All users', takenNames);
+      console.log('Current users: ', users);
+    }
   });
 
   socket.on('disconnect', () => {
     console.log('a user disconnected', socket.id);
-    // TODO: remove user with socket.id form users array
-  });
-
-  socket.on('chat message', (nick, msg, room) => {
-    if (room === '') {
-      console.log('message: ', msg);
-      io.emit('chat message', nick, msg);
-    } else {
-      console.log('room message: ', msg);
-      io.to(room).emit('chat message', nick, msg);
+    const unjoinData = users.find((item) => item.id === `${socket.id}`);
+    if (unjoinData) {
+      const unjoinName = unjoinData.username;
+      console.log('leaving: ', unjoinName);
+      io.emit('chat-message', unjoinName + ' left the chat');
+      users = users.filter((item) => item.id !== `${socket.id}`);
+      takenNames = takenNames.filter((item) => item !== `${unjoinName}`);
+      io.emit('All users', takenNames);
     }
   });
 
-  socket.on('join-room', (room) => {
-    socket.join(room);
-    console.log('joined room ', room);
-    console.log(socket.rooms);
+  socket.on('chat-message', (msg) => {
+    // const messag = JSON.stringify(msg);
+    console.log(msg);
+    io.emit('chat-message', msg);
   });
 });
 
