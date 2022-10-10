@@ -23,7 +23,7 @@
   <body class="scrollbar-hide">
     <div class="flex flex-col flex-1 min-h-screen h-100% max-h-screen">
       <section
-        class="bg-clr-russian-violet text-clr-rubine-red font-bold text-2xl"
+        class="bg-clr-russian-violet text-clr-rubine-red font-bold text-3xl lg:text-4xl"
       >
         <a class="h-16 flex items-center justify-center" href="./">
           MAHDOLLISUUKSIEN MAISEMIA
@@ -54,17 +54,31 @@
               </p>
             </video>
           </div>
-          <div class="h-2/5 overflow-hidden mx-1 lg:h-full lg:mx-3 lg:mt-3">
+          <div
+            class="h-2/5 overflow-hidden mx-1 lg:h-full lg:mx-3 lg:mt-3 lg:w-1/6"
+          >
             <div
-              class="lg:h-5/6 h-3/4 border-4 border-clr-rubine-red mr-1 flex-wrap min-w-full max-w-fit scrollbar-hide overflow-scroll"
+              id="chat-scroll"
+              class="lg:h-5/6 h-3/4 border-4 relative border-clr-rubine-red mr-1 flex-wrap min-w-full max-w-fit scrollbar-hide overflow-scroll"
             >
-              <div id="usernameBox" class="flex items-center justify-center h-full">
-                <form id="join" autocomplete="off" class="bg-clr-russian-violet rounded-lg p-4">
-                  <h3 class="text-white">Choose a chat username</h3>
-                  <input type="text" id="username" placeholder="username" />
+              <div id="usernameBox" class="flex absolute text-xl box-center">
+                <form
+                  id="join"
+                  autocomplete="off"
+                  class="bg-clr-russian-violet rounded-lg p-4"
+                >
+                  <h3 class="text-white p-2 underline">
+                    Choose a chat username
+                  </h3>
+                  <input
+                    type="text"
+                    id="username"
+                    placeholder="username"
+                    class="p-2"
+                  />
                   <button
                     type="submit"
-                    class="text-white bg-clr-old-mauve rounded-lg px-1"
+                    class="text-white bg-clr-old-mauve rounded-lg p-3 w-full mt-2"
                     id="usernameBtn"
                   >
                     Join
@@ -80,49 +94,23 @@
                   type="text"
                   id="m"
                   placeholder="message"
-                  class="w-5/6 border-2 border-clr-old-mauve bg-black text-white pl-4 ml-1 lg:h-24 flex-grow resize-none"
+                  class="w-5/6 border-2 text-xl border-clr-old-mauve bg-black text-white pl-4 ml-1 lg:h-24 flex-grow resize-none"
                 ></textarea>
-                <!-- <input
-                  type="text"
-                  id="nickname"
-                  placeholder="sender name"
-                  value=""
-                  class="rounded-lg border-2 border-clr-old-mauve pl-4 hidden"
-                /> -->
                 <button
                   type="submit"
                   class="px-6 bg-clr-rubine-red uppercase ml-1 font-bold h-14 mr-1 lg:h-24"
                   id="chatBtn"
                 >
                   Send
-                <!-- </button>
-                <input
-                  id="room-input"
-                  type="text"
-                  placeholder="room name"
-                  class="ml-1 rounded-lg border-2 border-clr-old-mauve pl-4 hidden"
-                />
-                <button
-                  id="room-button"
-                  type="button"
-                  class="px-8 rounded-md bg-clr-rubine-red uppercase ml-1 font-bold hidden"
-                ></button> -->
+                </button>
               </form>
             </div>
           </div>
         </div>
       </main>
-
-      <!-- <form id="msg-input">
-        <input type="text" id="nickname" placeholder="sender name" value="" />
-        <input type="text" id="m" placeholder="message" />
-        <button type="submit">Send</button>
-        <input id="room-input" value="2" type="text" placeholder="room name" />
-        <button id="room-button" type="button">Join Room</button>
-      </form> -->
     </div>
     <footer
-      class="bg-clr-russian-violet h-36 flex flex-col p-5 justify-around items-center lg:px-3 text-white text-xl lg:flex-row"
+      class="bg-clr-russian-violet flex flex-col p-5 justify-around items-center lg:px-3 text-white text-xl lg:flex-row"
     >
       <div>
         <a href="https://www.metropolia.fi">
@@ -135,14 +123,17 @@
       <div>#mahdollisuuksienmaisemia</div>
       <div>
         <a
-          class="fa fa-facebook"
+          class="fa fa-facebook face"
           href="https://www.facebook.com/mahdollisuuksienmaisemia"
         ></a>
         <a
-          class="fa fa-instagram"
+          class="fa fa-instagram insta"
           href="https://www.instagram.com/mahdollisuuksienmaisemia/"
         ></a>
-        <a class="fa fa-twitter" href="https://twitter.com/m_maisemia"></a>
+        <a
+          class="fa fa-twitter twitter"
+          href="https://twitter.com/m_maisemia"
+        ></a>
       </div>
     </footer>
     <script src="https://vjs.zencdn.net/7.20.2/video.min.js"></script>

@@ -22,6 +22,7 @@ io.on('connection', (socket) => {
       console.log('users connected:', users);
       io.emit('chat-message', username + ' joined.');
       io.emit('new user', username);
+      io.emit('Name available', username);
       io.emit('All users', takenNames);
       console.log('Current users: ', users);
     }

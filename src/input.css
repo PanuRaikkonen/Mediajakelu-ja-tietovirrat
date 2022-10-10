@@ -11,13 +11,22 @@ npx tailwindcss -i ./src/input.css -o ./public/css/output.css --watch
 
 @layer base {
   h2 {
-    @apply text-2xl text-blue-700 p-5;
+    /* @apply text-2xl text-blue-700 p-5; */
   }
 }
 
 @layer components {
   .message {
-    @apply py-1 px-1 bg-clr-rubine-red rounded-lg text-white w-fit m-2;
+    @apply py-1 px-1 bg-clr-rubine-red rounded-lg text-white m-2 flex flex-wrap w-fit text-xl;
+  }
+  .box-center {
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+  }
+  .faded {
+    background: rgba(42, 33, 82, 0.7);
+    border: solid;
   }
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
@@ -33,5 +42,29 @@ npx tailwindcss -i ./src/input.css -o ./public/css/output.css --watch
     color: white;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
       1px 1px 0 #000;
+  }
+  .face {
+    background: #3b5998;
+    color: white;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 5px;
+  }
+  .insta {
+    background: #125688;
+    color: white;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 5px;
+  }
+  .twitter {
+    background: #55acee;
+    color: white;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 5px;
   }
 }

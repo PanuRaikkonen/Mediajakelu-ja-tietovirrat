@@ -10,9 +10,11 @@ const inp = document.getElementById('m');
 const messages = document.getElementById('messages');
 const username = document.getElementById('username');
 
-let user;
+const chatscroll = document.getElementById('chat-scroll');
 
 document.getElementById('chatBtn').disabled = true;
+
+let user;
 
 //Message values
 form.addEventListener('submit', (event) => {
@@ -30,7 +32,6 @@ join.addEventListener('submit', (event) => {
   if (username.value) {
     user = username.value;
     socket.emit('join', user);
-    nameIsnt();
   }
 });
 
@@ -39,13 +40,18 @@ socket.on('chat-message', (msg) => {
   console.log(msg);
   const item = document.createElement('li');
   item.classList.add('message');
-  item.textContent = msg;
+  item.innerText = msg;
   messages.appendChild(item);
-  messages.scrollTop = messages.scrollHeight;
+  chatscroll.scrollTo(0, messages.scrollHeight);
 });
 
 socket.on('All users', (msg) => {
   console.log('users connected', msg);
+});
+
+socket.on('Name available', (msg) => {
+  console.log(msg, 'name available');
+  nameIsnt();
 });
 
 socket.on('Name already taken', (msg) => {
