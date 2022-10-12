@@ -563,6 +563,7 @@ h2 {
 }
 
 .message {
+  overflow-wrap: anywhere;
   margin: 0.5rem;
   display: flex;
   width: -webkit-fit-content;

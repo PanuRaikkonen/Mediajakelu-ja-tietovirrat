@@ -23,9 +23,9 @@
   <body class="scrollbar-hide">
     <div class="flex flex-col flex-1 min-h-screen h-100% max-h-screen">
       <section
-        class="bg-clr-russian-violet text-clr-rubine-red font-bold text-3xl lg:text-4xl"
+        class="bg-clr-russian-violet text-clr-rubine-red flex justify-center font-bold text-3xl lg:text-4xl"
       >
-        <a class="h-16 flex items-center justify-center" href="./">
+        <a class="h-16 flex items-center" href="./">
           MAHDOLLISUUKSIEN MAISEMIA
         </a>
       </section>
@@ -39,9 +39,9 @@
               class="video-js vjs-mystyle absolute overflow-hidden w-auto min-h-full min-w-full max-w-none"
             >
               <!-- <source
-                  src="http://195.148.104.124:1935/jakelu/tailwind/playlist.m3u8"
-                  type="application/x-mpegURL"
-                /> -->
+                src="http://195.148.104.124:1935/jakelu/panurai/playlist.m3u8"
+                type="application/x-mpegURL"
+              /> -->
               <source src="stream.mp4" type="video/mp4" />
               <p class="vjs-no-js">
                 To view this video please enable JavaScript, and consider
@@ -89,13 +89,13 @@
               <ul id="messages" class="h-28"></ul>
             </div>
             <div class="flex">
-              <form class="pt-2 flex flex-row flex-grow" id="chat-input">
-                <textarea
+              <form class="pt-2 flex flex-row flex-grow" id="chat-input" autocomplete="off">
+                <input
                   type="text"
                   id="m"
                   placeholder="message"
                   class="w-5/6 border-2 text-xl border-clr-old-mauve bg-black text-white pl-4 ml-1 lg:h-24 flex-grow resize-none"
-                ></textarea>
+                ></input>
                 <button
                   type="submit"
                   class="px-6 bg-clr-rubine-red uppercase ml-1 font-bold h-14 mr-1 lg:h-24"
@@ -149,6 +149,8 @@
         poster: './css/img/mainIMG.png',
         aspectRatio: '16:9',
       });
+
+      
     </script>
   </body>
 </html>

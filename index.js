@@ -22,7 +22,7 @@ io.on('connection', (socket) => {
       console.log('users connected:', users);
       io.emit('chat-message', username + ' joined.');
       io.emit('new user', username);
-      io.emit('Name available', username);
+      socket.emit('Name available', username);
       io.emit('All users', takenNames);
       console.log('Current users: ', users);
     }
@@ -34,7 +34,7 @@ io.on('connection', (socket) => {
     if (unjoinData) {
       const unjoinName = unjoinData.username;
       console.log('leaving: ', unjoinName);
-      io.emit('chat-message', unjoinName + ' left the chat');
+      io.emit('chat-message', unjoinName + ' left the chat.');
       users = users.filter((item) => item.id !== `${socket.id}`);
       takenNames = takenNames.filter((item) => item !== `${unjoinName}`);
       io.emit('All users', takenNames);

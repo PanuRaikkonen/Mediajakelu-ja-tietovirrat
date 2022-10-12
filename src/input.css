@@ -17,7 +17,7 @@ npx tailwindcss -i ./src/input.css -o ./public/css/output.css --watch
 
 @layer components {
   .message {
-    @apply py-1 px-1 bg-clr-rubine-red rounded-lg text-white m-2 flex flex-wrap w-fit text-xl;
+    @apply py-1 px-1 break bg-clr-rubine-red rounded-lg text-white m-2 flex flex-wrap w-fit text-xl;
   }
   .box-center {
     top: 50%;
@@ -66,5 +66,8 @@ npx tailwindcss -i ./src/input.css -o ./public/css/output.css --watch
     padding-left: 15px;
     padding-right: 15px;
     margin: 5px;
+  }
+  .break {
+    overflow-wrap: anywhere;
   }
 }

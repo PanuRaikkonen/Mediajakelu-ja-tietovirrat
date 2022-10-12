@@ -13,6 +13,7 @@ const username = document.getElementById('username');
 const chatscroll = document.getElementById('chat-scroll');
 
 document.getElementById('chatBtn').disabled = true;
+inp.disabled = true;
 
 let user;
 
@@ -39,9 +40,11 @@ join.addEventListener('submit', (event) => {
 socket.on('chat-message', (msg) => {
   console.log(msg);
   const item = document.createElement('li');
+  const itemInner = document.createElement('p');
   item.classList.add('message');
-  item.innerText = msg;
+  itemInner.innerText = msg;
   messages.appendChild(item);
+  item.appendChild(itemInner);
   chatscroll.scrollTo(0, messages.scrollHeight);
 });
 
@@ -63,9 +66,17 @@ function nameIsnt() {
   document.getElementById('chatBtn').disabled = false;
   document.getElementById('taken').innerHTML = '';
   document.getElementById('usernameBox').classList.add('hidden');
+  inp.disabled = false;
 }
 function nameIs() {
   document.getElementById('chatBtn').disabled = true;
   document.getElementById('taken').innerHTML = 'Name already taken!';
   document.getElementById('usernameBox').classList.add('block');
 }
+
+// inp.addEventListener('keydown', function (e) {
+//   if (e.code === 13 && !e.shiftKey) {
+//     e.preventDefault();
+
+// }
+// });
