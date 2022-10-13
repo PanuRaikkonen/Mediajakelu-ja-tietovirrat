@@ -1,8 +1,8 @@
 'use strict';
 
 // Localhost for development only
-const socket = io('http://localhost:3000');
-// const socket = io('https://panuraivm.westeurope.cloudapp.azure.com:443');
+// const socket = io('http://localhost:3000');
+const socket = io('https://panuraivm.westeurope.cloudapp.azure.com');
 
 const form = document.getElementById('chat-input');
 const join = document.getElementById('join');
@@ -73,10 +73,3 @@ function nameIs() {
   document.getElementById('taken').innerHTML = 'Name already taken!';
   document.getElementById('usernameBox').classList.add('block');
 }
-
-// inp.addEventListener('keydown', function (e) {
-//   if (e.code === 13 && !e.shiftKey) {
-//     e.preventDefault();
-
-// }
-// });
